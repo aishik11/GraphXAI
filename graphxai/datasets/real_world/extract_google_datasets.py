@@ -36,7 +36,7 @@ def load_graphs(datapath: str):
     # X = np.load(os.path.join(dir_path, 'x_true.npz'), allow_pickle = True)
     # y = np.load(os.path.join(dir_path, 'y_true.npz'), allow_pickle = True)
     data = np.load(datapath, allow_pickle = True)
-    att, X, y, df = data['attr'], data['X'], data['y'], data['smiles']
+    att, X, y, df = data['attr'], data['X'], data['y'].astype(int), data['smiles']
     # print(att)
     # print(X)
     # print(df)

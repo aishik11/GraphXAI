@@ -3,7 +3,7 @@ import numpy as np
 import networkx as nx
 import matplotlib
 import matplotlib.pyplot as plt
-from collections import Iterable
+from collections.abc import Iterable
 from torch_geometric.utils import to_networkx, remove_self_loops, remove_isolated_nodes
 from torch_geometric.utils.num_nodes import maybe_num_nodes
 from torch_geometric.data import Data
