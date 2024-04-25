@@ -12,7 +12,7 @@ class GIN_2layer(torch.nn.Module):
         self.conv2 = GINConv(self.mlp2)
         self.lin = torch.nn.Linear(hidden_channels, out_channels)
 
-    def forward(self, x, edge_index, batch):
+    def forward(self, x, edge_index, batch=None):
         x = self.conv1(x, edge_index)
         x = x.relu()
         x = self.conv2(x, edge_index)
@@ -36,7 +36,7 @@ class GIN_3layer(torch.nn.Module):
         self.conv3 = GINConv(self.mlp3)
         self.lin = torch.nn.Linear(hidden_channels, out_channels)
 
-    def forward(self, x, edge_index, batch):
+    def forward(self, x, edge_index, batch=None):
         x = self.conv1(x, edge_index)
         x = x.relu()
         x = self.conv2(x, edge_index)
